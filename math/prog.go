@@ -1,5 +1,12 @@
 package math4procon
 
+func abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
 func max(a, b int) int {
 	if a > b {
 		return a
