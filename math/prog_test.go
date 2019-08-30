@@ -61,3 +61,28 @@ func TestMin(t *testing.T) {
 		}
 	}
 }
+
+func TestDivmod(t *testing.T) {
+	type result struct {
+		quotient  int
+		remainder int
+	}
+	parameters := []struct {
+		x        int
+		y        int
+		expected result
+	}{
+		{5, 2, result{2, 1}},
+		{9, 5, result{1, 4}},
+		{4, 5, result{0, 4}},
+	}
+
+	for i, param := range parameters {
+		x, y, expected := param.x, param.y, param.expected
+		q, r := divmod(x, y)
+		actual := result{q, r}
+		if actual != expected {
+			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
+		}
+	}
+}

@@ -20,3 +20,7 @@ func min(a, b int) int {
 	}
 	return b
 }
+
+func divmod(x, y int) (int, int) {
+	return x / y, x % y
+}
