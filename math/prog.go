@@ -7,18 +7,18 @@ func abs(x int) int {
 	return x
 }
 
-func max(a, b int) int {
-	if a > b {
-		return a
+func max(x, y int) int {
+	if x > y {
+		return x
 	}
-	return b
+	return y
 }
 
-func min(a, b int) int {
-	if a < b {
-		return a
+func min(x, y int) int {
+	if x < y {
+		return x
 	}
-	return b
+	return y
 }
 
 func divmod(x, y int) (int, int) {

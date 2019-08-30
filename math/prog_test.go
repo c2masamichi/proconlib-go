@@ -24,8 +24,8 @@ func TestAbs(t *testing.T) {
 
 func TestMax(t *testing.T) {
 	parameters := []struct {
-		a        int
-		b        int
+		x        int
+		y        int
 		expected int
 	}{
 		{2, 1, 2},
@@ -34,8 +34,8 @@ func TestMax(t *testing.T) {
 	}
 
 	for i, param := range parameters {
-		a, b, expected := param.a, param.b, param.expected
-		actual := max(a, b)
+		x, y, expected := param.x, param.y, param.expected
+		actual := max(x, y)
 		if actual != expected {
 			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
 		}
@@ -44,8 +44,8 @@ func TestMax(t *testing.T) {
 
 func TestMin(t *testing.T) {
 	parameters := []struct {
-		a        int
-		b        int
+		x        int
+		y        int
 		expected int
 	}{
 		{2, 1, 1},
@@ -54,8 +54,8 @@ func TestMin(t *testing.T) {
 	}
 
 	for i, param := range parameters {
-		a, b, expected := param.a, param.b, param.expected
-		actual := min(a, b)
+		x, y, expected := param.x, param.y, param.expected
+		actual := min(x, y)
 		if actual != expected {
 			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
 		}
