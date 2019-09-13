@@ -86,3 +86,23 @@ func TestDivmod(t *testing.T) {
 		}
 	}
 }
+
+func TestGcd(t *testing.T) {
+	parameters := []struct {
+		x        int
+		y        int
+		expected int
+	}{
+		{8, 2, 2},
+		{17, 13, 1},
+		{147, 105, 21},
+	}
+
+	for i, param := range parameters {
+		x, y, expected := param.x, param.y, param.expected
+		actual := gcd(x, y)
+		if actual != expected {
+			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
+		}
+	}
+}
