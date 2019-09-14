@@ -106,3 +106,23 @@ func TestGcd(t *testing.T) {
 		}
 	}
 }
+
+func TestLcm(t *testing.T) {
+	parameters := []struct {
+		x        int
+		y        int
+		expected int
+	}{
+		{2, 4, 4},
+		{2, 3, 6},
+		{16, 24, 48},
+	}
+
+	for i, param := range parameters {
+		x, y, expected := param.x, param.y, param.expected
+		actual := lcm(x, y)
+		if actual != expected {
+			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
+		}
+	}
+}

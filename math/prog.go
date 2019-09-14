@@ -36,3 +36,7 @@ func gcd(x, y int) int {
 	}
 	return x
 }
+
+func lcm(x, y int) int {
+	return x * y / gcd(x, y)
+}
