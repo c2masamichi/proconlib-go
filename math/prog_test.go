@@ -42,6 +42,24 @@ func TestMax(t *testing.T) {
 	}
 }
 
+func TestMaxList(t *testing.T) {
+	parameters := []struct {
+		x        []int
+		expected int
+	}{
+		{[]int{2}, 2},
+		{[]int{3, 4, 1, 2}, 4},
+	}
+
+	for i, param := range parameters {
+		x, expected := param.x, param.expected
+		actual := maxList(x)
+		if actual != expected {
+			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
+		}
+	}
+}
+
 func TestMin(t *testing.T) {
 	parameters := []struct {
 		x        int

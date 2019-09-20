@@ -14,6 +14,14 @@ func max(x, y int) int {
 	return y
 }
 
+func maxList(x []int) int {
+	maxv := x[0]
+	for i := 0; i < len(x); i++ {
+		maxv = max(maxv, x[i])
+	}
+	return maxv
+}
+
 func min(x, y int) int {
 	if x < y {
 		return x
