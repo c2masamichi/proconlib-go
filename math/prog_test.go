@@ -80,6 +80,24 @@ func TestMin(t *testing.T) {
 	}
 }
 
+func TestMinList(t *testing.T) {
+	parameters := []struct {
+		x        []int
+		expected int
+	}{
+		{[]int{2}, 2},
+		{[]int{3, 4, 1, 2}, 1},
+	}
+
+	for i, param := range parameters {
+		x, expected := param.x, param.expected
+		actual := minList(x)
+		if actual != expected {
+			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
+		}
+	}
+}
+
 func TestDivmod(t *testing.T) {
 	type result struct {
 		quotient  int

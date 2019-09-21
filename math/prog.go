@@ -29,6 +29,14 @@ func min(x, y int) int {
 	return y
 }
 
+func minList(x []int) int {
+	minv := x[0]
+	for i := 0; i < len(x); i++ {
+		minv = min(minv, x[i])
+	}
+	return minv
+}
+
 func divmod(x, y int) (int, int) {
 	return x / y, x % y
 }
