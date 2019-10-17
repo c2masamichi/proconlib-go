@@ -16,7 +16,7 @@ func max(x, y int) int {
 
 func maxList(x []int) int {
 	maxv := x[0]
-	for i := 0; i < len(x); i++ {
+	for i := 1; i < len(x); i++ {
 		maxv = max(maxv, x[i])
 	}
 	return maxv
@@ -31,7 +31,7 @@ func min(x, y int) int {
 
 func minList(x []int) int {
 	minv := x[0]
-	for i := 0; i < len(x); i++ {
+	for i := 1; i < len(x); i++ {
 		minv = min(minv, x[i])
 	}
 	return minv
