@@ -143,6 +143,26 @@ func TestGcd(t *testing.T) {
 	}
 }
 
+func TestGcdList(t *testing.T) {
+	parameters := []struct {
+		x        []int
+		expected int
+	}{
+		{[]int{3}, 3},
+		{[]int{8, 2}, 2},
+		{[]int{6, 15, 9}, 3},
+		{[]int{17, 13, 7}, 1},
+	}
+
+	for i, param := range parameters {
+		x, expected := param.x, param.expected
+		actual := gcdList(x)
+		if actual != expected {
+			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
+		}
+	}
+}
+
 func TestLcm(t *testing.T) {
 	parameters := []struct {
 		x        int

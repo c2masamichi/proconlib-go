@@ -53,6 +53,14 @@ func gcd(x, y int) int {
 	return x
 }
 
+func gcdList(x []int) int {
+	ret := x[0]
+	for i := 1; i < len(x); i++ {
+		ret = gcd(ret, x[i])
+	}
+	return ret
+}
+
 func lcm(x, y int) int {
 	return x * y / gcd(x, y)
 }
