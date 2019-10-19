@@ -64,3 +64,11 @@ func gcdList(x []int) int {
 func lcm(x, y int) int {
 	return x * y / gcd(x, y)
 }
+
+func lcmList(x []int) int {
+	ret := x[0]
+	for i := 1; i < len(x); i++ {
+		ret = lcm(ret, x[i])
+	}
+	return ret
+}

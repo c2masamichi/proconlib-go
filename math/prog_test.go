@@ -182,3 +182,23 @@ func TestLcm(t *testing.T) {
 		}
 	}
 }
+
+func TestLcmList(t *testing.T) {
+	parameters := []struct {
+		x        []int
+		expected int
+	}{
+		{[]int{3}, 3},
+		{[]int{2, 4}, 4},
+		{[]int{2, 3, 5}, 30},
+		{[]int{10, 6, 8}, 120},
+	}
+
+	for i, param := range parameters {
+		x, expected := param.x, param.expected
+		actual := lcmList(x)
+		if actual != expected {
+			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
+		}
+	}
+}
