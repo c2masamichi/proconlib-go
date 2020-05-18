@@ -202,3 +202,25 @@ func TestLcmList(t *testing.T) {
 		}
 	}
 }
+
+func TestIsPrime(t *testing.T) {
+	parameters := []struct {
+		x        int
+		expected bool
+	}{
+		{1, false},
+		{2, true},
+		{4, false},
+		{5, true},
+		{71, true},
+		{91, false},
+	}
+
+	for i, param := range parameters {
+		x, expected := param.x, param.expected
+		actual := isPrime(x)
+		if actual != expected {
+			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
+		}
+	}
+}
