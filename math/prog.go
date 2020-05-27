@@ -54,11 +54,11 @@ func gcd(x, y int) int {
 }
 
 func gcdList(x []int) int {
-	ret := x[0]
+	result := x[0]
 	for i := 1; i < len(x); i++ {
-		ret = gcd(ret, x[i])
+		result = gcd(result, x[i])
 	}
-	return ret
+	return result
 }
 
 func lcm(x, y int) int {
@@ -66,11 +66,11 @@ func lcm(x, y int) int {
 }
 
 func lcmList(x []int) int {
-	ret := x[0]
+	result := x[0]
 	for i := 1; i < len(x); i++ {
-		ret = lcm(ret, x[i])
+		result = lcm(result, x[i])
 	}
-	return ret
+	return result
 }
 
 func isPrime(x int) bool {
