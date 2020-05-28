@@ -1,4 +1,4 @@
-package math4procon
+package number
 
 import (
 	"testing"

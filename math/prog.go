@@ -1,4 +1,4 @@
-package math4procon
+package number
 
 func abs(x int) int {
 	if x < 0 {
