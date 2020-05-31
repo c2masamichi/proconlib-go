@@ -90,3 +90,15 @@ func isPrime(x int) bool {
 	}
 	return true
 }
+
+func countFactors(x, mod int) int {
+	cnt := 0
+	r := 0
+	for r == 0 {
+		x, r = divmod(x, mod)
+		if r == 0 {
+			cnt++
+		}
+	}
+	return cnt
+}

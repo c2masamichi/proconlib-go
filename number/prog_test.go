@@ -224,3 +224,24 @@ func TestIsPrime(t *testing.T) {
 		}
 	}
 }
+
+func TestCountFactors(t *testing.T) {
+	parameters := []struct {
+		x        int
+		mod      int
+		expected int
+	}{
+		{3, 3, 1},
+		{7, 2, 0},
+		{16, 2, 4},
+		{48, 2, 4},
+	}
+
+	for i, param := range parameters {
+		x, mod, expected := param.x, param.mod, param.expected
+		actual := countFactors(x, mod)
+		if actual != expected {
+			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
+		}
+	}
+}
