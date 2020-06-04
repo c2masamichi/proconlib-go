@@ -1,6 +1,7 @@
 package number
 
 import (
+	"reflect"
 	"testing"
 )
 
@@ -241,6 +242,26 @@ func TestCountFactors(t *testing.T) {
 		x, mod, expected := param.x, param.mod, param.expected
 		actual := countFactors(x, mod)
 		if actual != expected {
+			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
+		}
+	}
+}
+func TestMakeDivisors(t *testing.T) {
+	parameters := []struct {
+		x        int
+		expected []int
+	}{
+		{1, []int{1}},
+		{3, []int{1, 3}},
+		{6, []int{1, 2, 3, 6}},
+		{16, []int{1, 2, 4, 8, 16}},
+		{25, []int{1, 5, 25}},
+	}
+
+	for i, param := range parameters {
+		x, expected := param.x, param.expected
+		actual := makeDivisors(x)
+		if !reflect.DeepEqual(actual, expected) {
 			t.Errorf("i: %d\nactual: %v\nexpected: %v", i, actual, expected)
 		}
 	}

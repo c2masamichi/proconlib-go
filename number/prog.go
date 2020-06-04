@@ -1,5 +1,7 @@
 package number
 
+import "sort"
+
 func abs(x int) int {
 	if x < 0 {
 		return -x
@@ -101,4 +103,23 @@ func countFactors(x, mod int) int {
 		}
 	}
 	return cnt
+}
+
+func makeDivisors(x int) []int {
+	if x == 1 {
+		return []int{1}
+	}
+
+	divisor := []int{1, x}
+	for i := 2; i*i <= x; i++ {
+		q, r := divmod(x, i)
+		if r == 0 {
+			divisor = append(divisor, i)
+			if q != i {
+				divisor = append(divisor, q)
+			}
+		}
+	}
+	sort.Ints(divisor)
+	return divisor
 }
