@@ -5,12 +5,12 @@ func powMod(x, y, mod int) int {
 		return 1
 	}
 
-	result := 1
-	for i := 0; i < y; i++ {
-		result *= x
-		result %= mod
+	if y%2 == 0 {
+		d := powMod(x, y/2, mod)
+		return (d * d) % mod
+	} else {
+		return (x * powMod(x, y-1, mod)) % mod
 	}
-	return result
 }
 
 func calcComb(n, r, mod int) int {

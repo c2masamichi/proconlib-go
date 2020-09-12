@@ -11,8 +11,10 @@ func TestPowMod(t *testing.T) {
 		mod      int
 		expected int
 	}{
-		{2, 4, 23, 16},
+		{2, 0, 101, 1},
+		{2, 4, 101, 16},
 		{2, 4, 11, 5},
+		{2, 5, 101, 32},
 	}
 
 	for i, param := range parameters {
